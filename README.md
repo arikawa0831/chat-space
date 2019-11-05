@@ -64,3 +64,6 @@ Things you may want to cover:
 - belongs_to :group
 
 * ...
+
+# README
+## how to use GitHub Desktop
