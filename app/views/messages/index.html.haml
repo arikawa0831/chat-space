@@ -6,5 +6,9 @@
     .chat__main__border
     = render partial: "chat_main_header"
     .chat__main__message
-      = render partial: "chat_main_message"
+      -@messages.each do |message|
+        = render partial: "chat_main_message", locals:{message: message}
     = render partial: "chat_main_footer"
+
+
+

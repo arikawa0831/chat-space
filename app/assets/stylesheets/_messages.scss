@@ -106,11 +106,14 @@
       width: calc(100vw - 380px);
       padding: 20px 40px;
       background-color: #ddd;
-      &__form{
-        display: flex;
+      position: relative;
+      display: flex;
+      .new_message {
+        border: none;
         height: 50px;
         width: calc(100vw - 380px);
-        position: relative;
+      }
+      &__form{
         &__text{
           height: 50px;
           width: calc(100vw - 495px);
@@ -122,8 +125,11 @@
           }
           &__img{
             position: absolute;
-            top: 20px;
-            right: 125px;
+            top: 35px;
+            right: 165px;
+            .hidden {
+              display: none;
+            }
           }
         } 
         &__send{
@@ -132,12 +138,15 @@
           background-color: #38AEF0;
           width: 100px;
           color: #ffffff;
-          margin-left: auto;
+          position: absolute;
+          top: 21px;
+          right: 40px;
         }
       }
     }
   }
 }
+
 
 
 
