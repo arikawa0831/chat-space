@@ -1,13 +1,23 @@
-.chat__main__header
-  -current_user.groups.each do |group|
-    .chat__main__header__left
-      .chat__main__header__left__gname
-        = group.name
-      .chat__main__header__left__member
-        メンバー
-    .chat__main__header__edit-button
-      = link_to edit_group_path(group) do
-        = 'Edit'
+-# .chat__main__header
+-#   -current_user.groups.each do |group|
+-#     .chat__main__header__left
+-#       .chat__main__header__left__gname
+-#         = group.name
+-#       .chat__main__header__left__member
+-#         メンバー
+-#     .chat__main__header__edit-button
+-#       = link_to edit_group_path(group) do
+-#         = 'Edit'
       
 
+.chat__main__header
+  .chat__main__header__left
+    .chat__main__header__left__gname
+      = group.name
+    .chat__main__header__left__member
+      -current_user.groups.each do |user|
+        =user.name
+  .chat__main__header__edit-button
+    = link_to edit_group_path(group) do
+      = 'Edit'
 
