@@ -66,3 +66,6 @@ gem 'mini_magick'
 group :test, :development do 
   gem 'capybara'
 end
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
