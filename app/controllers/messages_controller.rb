@@ -8,10 +8,11 @@ class MessagesController < ApplicationController
   end
 
   def create
+
     @message = @group.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redirect_to group_messages_path(@message), notice: "メッセージを送信しました" }
+        format.html { redirect_to group_messages_path(@group), notice: "メッセージを送信しました" }
         format.json
       end
     end
@@ -24,6 +25,7 @@ class MessagesController < ApplicationController
   end
 
   def set_group
+   
     @group = Group.find(params[:group_id])
   end
 

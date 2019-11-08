@@ -1,5 +1,5 @@
 
-$(function(){
+$(document).on('turbolinks:load', function(){
 
   function buildMessage(message){
     var content = message.content ? `<p class="lower-message__content">
@@ -26,7 +26,7 @@ $(function(){
     return html;
   }
 
-  $('.new_message').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
