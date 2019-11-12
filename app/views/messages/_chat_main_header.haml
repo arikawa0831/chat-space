@@ -1,6 +1,6 @@
 .chat__main__header
   .chat__main__header__left
-    .chat__main__header__left__gname
+    .chat__main__header__left__gname{data: {gid: "#{group.id}"}}
       = group.name
     .chat__main__header__left__member
       -@group.users.each do |user|
@@ -8,4 +8,3 @@
   .chat__main__header__edit-button
     = link_to edit_group_path(group) do
       = 'Edit'
-
