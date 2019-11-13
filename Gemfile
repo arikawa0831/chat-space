@@ -78,3 +78,4 @@ end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'fog-aws'
