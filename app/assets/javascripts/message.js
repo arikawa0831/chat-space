@@ -1,6 +1,7 @@
+console.log("test");
 
-$(document).on('turbolinks:load', function(){
-
+$(function(){
+  console.log("aaaaaa");
   function buildMessage(message){
     var content = message.content ? `<p class="lower-message__content">
                                        ${message.content}
@@ -29,6 +30,7 @@ $(document).on('turbolinks:load', function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
+    console.log(this);
     var url = $(this).attr('action');
     $.ajax({
       url: url,
