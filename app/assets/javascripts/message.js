@@ -1,5 +1,3 @@
-console.log("test");
-
 $(function(){
   function buildMessage(message){
     var content = message.content ? `<p class="lower-message__content">
@@ -55,8 +53,9 @@ $(function(){
   var reloadMessages = function() {
     const last_message_id = $('.chat__main__message__box:last').data('id');
     const gid = $('.chat__main__header__left__gname').data('gid');
-    if (window.location.href.match(/\/groups\/\gid+\/messages/)){
-
+    console.log("test");
+      if (location.href.match(/\/groups\/\d+\/messages/)){
+      console.log("ok");
       $.ajax({
         url: "/groups/"+gid+"/api/messages",
         type: 'get',
