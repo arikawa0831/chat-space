@@ -55,25 +55,27 @@ $(function(){
   var reloadMessages = function() {
     const last_message_id = $('.chat__main__message__box:last').data('id');
     const gid = $('.chat__main__header__left__gname').data('gid');
+    if (window.location.href.match(/\/groups\/\gid+\/messages/)){
 
-    $.ajax({
-      url: "/groups/"+gid+"/api/messages",
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-
-    .done(function(messages) {
-      messages.forEach(function(message){
-        var insertHTML = []; 
-        var insertHTML = buildMessage(message); 
-        $('.chat__main__message').append(insertHTML);
-        $('.chat__main__message').animate({ scrollTop: $('.chat__main__message')[0].scrollHeight });
+      $.ajax({
+        url: "/groups/"+gid+"/api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
       })
-    })
-    .fail(function() {
-      alert('自動更新に失敗しました');
-    });
+
+      .done(function(messages) {
+        messages.forEach(function(message){
+          var insertHTML = []; 
+          var insertHTML = buildMessage(message); 
+          $('.chat__main__message').append(insertHTML);
+          $('.chat__main__message').animate({ scrollTop: $('.chat__main__message')[0].scrollHeight });
+        })
+      })
+      .fail(function() {
+        alert('自動更新に失敗しました');
+      });
+    }
   };
 
   setInterval(reloadMessages, 7000);

@@ -6,5 +6,5 @@
       -@group.users.each do |user|
         =user.name
   .chat__main__header__edit-button
-    = link_to edit_group_path(group) do
+    = link_to edit_group_path(group), class:"Edit" do
       = 'Edit'

@@ -17,10 +17,13 @@
       display: inline-block;
       }
       &__icon{
-      color: #fff;
       margin-left: auto;
       padding-right: 20px;
       line-height: 110px;
+      .link-btn{
+        color: #fff;
+        text-decoration: none;
+      }
       }
     }
     &__glist{
@@ -74,6 +77,10 @@
         height: 40px;
         color: #38AEF0;
         margin-top: 28px;
+        .Edit{
+          text-decoration: none;
+          color: #38AEF0;
+        }
       }
     }
     &__message{
@@ -119,12 +126,12 @@
       &__form{
         &__text{
           height: 50px;
-          width: calc(100vw - 495px);
+          width: calc(100vw - 505px);
           margin-right: 15px;
+          padding-left: 10px;
           &::placeholder {
             color: #434A54;
             font-size: 16px;
-            margin-left: 10px;
           }
           &__img{
             position: absolute;
