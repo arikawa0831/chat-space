@@ -3,7 +3,7 @@
     .chat__main__message__box__top__name
       = message.user.name 
     .chat__main__message__box__top__time
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.strftime("%Y/%m/%d (%a) %H:%M")
   .chat__main__message__box__text
     - if message.content.present?
       %p.lower-message__content
